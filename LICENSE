@@ -1,0 +1,21 @@
+Glance
+Copyright (c) 2026 whoisnaisu. All rights reserved.
+
+You may download and use Glance free of charge, for personal or commercial work.
+
+You may not:
+- sell Glance or include it in a paid product;
+- redistribute modified versions of it;
+- reverse engineer, decompile or disassemble it, except where applicable law
+  allows this despite this restriction.
+
+To share Glance, link to https://github.com/whoisnaisu/glance instead of hosting
+the files elsewhere.
+
+GLANCE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO
+EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING
+FROM, OUT OF OR IN CONNECTION WITH GLANCE OR ITS USE.
+
+Glance includes open-source components that are licensed separately. They are
+listed, with their licenses, in THIRD-PARTY-NOTICES.txt, which comes with every
+download.
