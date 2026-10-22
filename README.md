@@ -16,9 +16,9 @@ A tiny pixel-art clock for your desktop that shows, at a glance, how your Claude
 
 ## Download
 
-For Windows 10 and 11 (x64): get `Glance-vX.Y.Z-windows-x64-portable.zip` from [Releases](../../releases/latest).
+For Windows 10 and 11 (x64): get `glance.exe` from [Releases](../../releases/latest), or `Glance-vX.Y.Z-windows-x64-portable.zip` if you'd rather have the license files with it.
 
-1. Unzip `glance.exe` into a folder you'll keep it in, for example `%LOCALAPPDATA%\Programs\Glance\`.
+1. Put `glance.exe` in a folder you'll keep it in, for example `%LOCALAPPDATA%\Programs\Glance\`.
 2. Run it. Windows may say "Windows protected your PC" because the app isn't code-signed; choose **More info → Run anyway**.
 3. Right-click the clock → **Connect**, so Claude Code reports its sessions. Turn on **Plan limits** as well if you want them.
 
@@ -47,6 +47,6 @@ In Glance's settings, **Disconnect**, turn **Plan limits** off and untick **Star
 
 ## License
 
-Free to use; see [LICENSE](LICENSE). The source code isn't published. Glance is built with [Tauri](https://tauri.app) and other open-source software, credited in `THIRD-PARTY-NOTICES.txt` inside every download. Fonts: Silkscreen and DotGothic16, under the SIL Open Font License.
+Free to use; see [LICENSE](LICENSE). The source code isn't published. Glance is built with [Tauri](https://tauri.app) and other open-source software, credited in `THIRD-PARTY-NOTICES.txt`, attached to every release. Fonts: Silkscreen and DotGothic16, under the SIL Open Font License.
 
 Bug reports and ideas are welcome in [Issues](../../issues).
