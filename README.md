@@ -35,18 +35,32 @@ To update, quit Glance from its tray icon and replace `glance.exe`.
 
 - **Connect** adds hooks to `~/.claude/settings.json`, after backing the file up to `settings.json.glance.bak`. Each hook runs `glance.exe hook`, which writes a small status file to `~/.glance/sessions/` and exits. **Disconnect** removes only Glance's hooks.
 - **Plan limits** sets Claude Code's `statusLine` to `glance.exe statusline`, which saves your limits to `~/.glance/limits.json` and prints a short line under your prompt. With a status line set, Claude Code hides some footer hints such as "esc to interrupt". Glance never replaces a status line you already have.
+  Claude Code's VS Code panel doesn't run status lines, so while Plan limits are on, Glance also asks Anthropic for your usage every 5 minutes (`api.anthropic.com/api/oauth/usage`, the same source as Claude Code's `/usage`). It signs in with Claude Code's own login from `~/.claude/.credentials.json`; the token goes only to `api.anthropic.com` and is never saved or logged.
 - **Start with Windows** adds a `Glance` entry under `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`.
 - Tokens are counted by reading Claude Code's transcripts in `~/.claude/projects`; Glance only reads them.
 - Glance's own settings live in `%APPDATA%\com.glance.desktop\`.
 
-Glance itself doesn't connect to the internet. The hooks and status line point at `glance.exe` where it was when you connected, so connect again if you move it.
+The only internet request Glance makes is that usage check, and only while Plan limits are on. The hooks and status line point at `glance.exe` where it was when you connected, so connect again if you move it.
 
 ### Uninstall
 
 In Glance's settings, **Disconnect**, turn **Plan limits** off and untick **Start with Windows**. Then quit it from the tray and delete `glance.exe`, the `~/.glance` folder and `%APPDATA%\com.glance.desktop`.
 
+## Bugs
+
+Glance is young and may still have bugs. Plan limits are the part most likely to break: since v0.1.3 they also come from an Anthropic usage endpoint that isn't documented and can change without notice.
+
+If something looks wrong, please [open an issue](../../issues/new) with:
+
+- your Glance version (right-click `glance.exe` → **Properties** → **Details**),
+- whether you use Claude Code in a terminal, the VS Code panel, or both,
+- what you expected and what you saw (a screenshot helps),
+- for plan limits, the contents of `~/.glance/limits.json`.
+
+Never paste anything from `~/.claude/.credentials.json`: it holds your Claude login.
+
+Ideas are welcome in [Issues](../../issues) too.
+
 ## License
 
 Free to use; see [LICENSE](LICENSE). The source code isn't published. Glance is built with [Tauri](https://tauri.app) and other open-source software, credited in `THIRD-PARTY-NOTICES.txt`, attached to every release. Fonts: Silkscreen and DotGothic16, under the SIL Open Font License.
-
-Bug reports and ideas are welcome in [Issues](../../issues).
